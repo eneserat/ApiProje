@@ -7,11 +7,9 @@ namespace ApiProje.WebApi.ValidationRules
     {
         public ProductValidator()
         {
-            RuleFor(p => p.ProductName).NotEmpty().WithMessage("Ürün Adı Boş Geçilemez.");
-            RuleFor(p => p.ProductName).MinimumLength(2).WithMessage("Ürün Adı En Az 2 Karakter Olmalıdır.");
-            RuleFor(p => p.Price).GreaterThan(0).WithMessage("Birim Fiyatı 0'dan Büyük Olmalıdır.");
-            RuleFor(p => p.Price).NotEmpty().WithMessage("Birim Fiyatı Boş Geçilemez.").LessThan(0).WithMessage("Birim Fiyatı 0'dan Küçük Olamaz.");
-
+          RuleFor(p => p.ProductName).NotEmpty().WithMessage("Ürün adı boş geçilemez.").MinimumLength(2).WithMessage("Ürün adı en az 2 karakter olmalıdır.").MaximumLength(100).WithMessage("Ürün adı en fazla 100 karakter olabilir.");
+          RuleFor(p => p.Price).GreaterThan(0).WithMessage("Fiyat sıfırdan büyük olmalıdır.");
+          
 
         }
     }

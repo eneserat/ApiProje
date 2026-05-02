@@ -1,6 +1,9 @@
 using System.Reflection;
 using ApiProje.WebApi.Context;
+using ApiProje.WebApi.Entities;
 using ApiProje.WebApi.Mapping;
+using ApiProje.WebApi.ValidationRules;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -12,7 +15,9 @@ builder.Services.AddDbContext<ApiContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+builder.Services.AddScoped<IValidator<Product>,ProductValidator>();
 builder.Services.AddControllers();
+
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

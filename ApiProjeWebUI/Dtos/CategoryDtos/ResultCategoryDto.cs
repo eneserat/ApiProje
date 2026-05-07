@@ -1,6 +1,6 @@
 ﻿namespace ApiProjeWebUI.Dtos.CategoryDtos
 {
-    public class ResultCategoryDto
+    public class ResultTestimonialDto
     {
         public int CategoryID { get; set; }
         public string CategoryName { get; set; }

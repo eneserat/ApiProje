@@ -1,0 +1,66 @@
+﻿[
+  {
+    "yummyEventID": 1,
+    "title": "Doğum Günü Organizasyonu",
+    "description": "Sevdiklerinizle unutulmaz bir doğum günü kutlaması için özel masa süslemeleri, canlı müzik ve özel menüler sunuyoruz.",
+    "imageUrl": "/images/events/events-1.jpg",
+    "status": true,
+    "price": 2500
+  },
+  {
+    "yummyEventID": 2,
+    "title": "Kurumsal İş Toplantısı",
+    "description": "Şirket toplantılarınız ve iş yemekleriniz için sessiz, konforlu ve profesyonel bir ortam sağlıyoruz.",
+    "imageUrl": "/images/events/events-2.jpg",
+    "status": true,
+    "price": 5000
+  },
+  {
+    "yummyEventID": 3,
+    "title": "Nişan Kutlaması",
+    "description": "Hayatınızın en özel anlarından biri için şık dekorasyon ve zengin yemek menüleriyle hizmet veriyoruz.",
+    "imageUrl": "/images/events/events-3.jpg",
+    "status": true,
+    "price": 7500
+  },
+  {
+    "yummyEventID": 4,
+    "title": "Düğün Yemeği",
+    "description": "Kalabalık davetleriniz için geniş oturma alanı, özel servis ve canlı müzik eşliğinde düğün organizasyonu.",
+    "imageUrl": "/images/events/events-4.jpg",
+    "status": true,
+    "price": 15000
+  },
+  {
+    "yummyEventID": 5,
+    "title": "Mezuniyet Partisi",
+    "description": "Arkadaş grubunuzla eğlenceli ve unutulmaz bir mezuniyet kutlaması için özel etkinlik alanı hazırlıyoruz.",
+    "imageUrl": "/images/events/events-5.jpg",
+    "status": true,
+    "price": 4000
+  },
+  {
+    "yummyEventID": 6,
+    "title": "Aile Yemek Organizasyonu",
+    "description": "Kalabalık aile buluşmaları ve özel günleriniz için sıcak atmosferde özel masa rezervasyonları sunuyoruz.",
+    "imageUrl": "/images/events/events-6.jpg",
+    "status": true,
+    "price": 3000
+  },
+  {
+    "yummyEventID": 7,
+    "title": "Canlı Müzik Gecesi",
+    "description": "Hafta sonları canlı müzik eşliğinde yemek keyfi yaşayabileceğiniz özel etkinlik geceleri düzenliyoruz.",
+    "imageUrl": "/images/events/events-7.jpg",
+    "status": true,
+    "price": 1200
+  },
+  {
+    "yummyEventID": 8,
+    "title": "Romantik Akşam Yemeği",
+    "description": "Çiftler için özel hazırlanmış romantik masa düzeni ve özel şef menüsü ile unutulmaz bir akşam.",
+    "imageUrl": "/images/events/events-8.jpg",
+    "status": true,
+    "price": 3500
+  }
+]

@@ -1,12 +1,15 @@
-﻿using ApiProjeWebUI.Dtos.CategoryDtos;
-using ApiProjeWebUI.Dtos.ServiceDtos;
+﻿
+
+using ApiProjeWebUI.Dtos.CategoryDtos;
+using ApiProjeWebUI.Dtos.ProductDtos;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
-namespace ApiProjeWebUI.Views.Shared.Components._DefaultMenuViewComponents
+namespace ApiProjeWebUI.ViewComponents.DefaultMenuViewComponents
 {
     public class _DefaultMenuCategoryComponentPartial:ViewComponent
     {
+
         private readonly IHttpClientFactory _httpClientFactory;
 
         public _DefaultMenuCategoryComponentPartial(IHttpClientFactory httpClientFactory)
@@ -22,14 +25,12 @@ namespace ApiProjeWebUI.Views.Shared.Components._DefaultMenuViewComponents
 
             if (!responseMessage.IsSuccessStatusCode)
             {
-                return View(new List<ResultCategoryDto>());
+                return View(new List<ResultTestimonialDto>());
             }
 
             var jsonData = await responseMessage.Content.ReadAsStringAsync();
-            var values = JsonConvert.DeserializeObject<List<ResultCategoryDto>>(jsonData);
-
+            var values = JsonConvert.DeserializeObject<List<ResultTestimonialDto>>(jsonData);
             return View(values);
         }
     }
-    }
-
+}

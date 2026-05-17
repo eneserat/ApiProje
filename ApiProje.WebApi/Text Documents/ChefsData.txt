@@ -1,0 +1,23 @@
+﻿[
+  {
+    "chefID": 1,
+    "nameSurname": "Mehmet Yıldırım",
+    "title": "Baş Şef",
+    "description": "20 yıllık mutfak deneyimiyle dünya mutfağı ve steak menülerinde uzmanlaşmış profesyonel şef.",
+    "imageUrl": "test"
+  },
+  {
+    "chefID": 2,
+    "nameSurname": "Ayşe Demir",
+    "title": "Tatlı Şefi",
+    "description": "Modern ve geleneksel tatlıları özgün sunumlarla hazırlayan deneyimli pastacılık uzmanı.",
+    "imageUrl": "test"
+  },
+  {
+    "chefID": 3,
+    "nameSurname": "Emre Kaya",
+    "title": "Sous Chef",
+    "description": "Deniz ürünleri ve özel sos tarifleri konusunda uzmanlaşmış yaratıcı yardımcı şef.",
+    "imageUrl": "test"
+  }
+]

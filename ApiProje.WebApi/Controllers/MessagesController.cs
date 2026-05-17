@@ -14,10 +14,14 @@ namespace ApiProje.WebApi.Controllers
         private readonly ApiContext _context;
         private readonly IMapper _mapper;
 
-        public MessagesController(IMapper mapper)
+        public MessagesController(ApiContext context, IMapper mapper)
         {
+            _context = context;
             _mapper = mapper;
         }
+
+       
+       
         [HttpGet]
         public IActionResult MessageList()
         {
@@ -62,7 +66,13 @@ namespace ApiProje.WebApi.Controllers
             _context.SaveChanges();
             return Ok("Mesaj Sistemde Başarıyla Güncellendi.");
         }
+        [HttpGet("MessageListByIsReadFalse")]
+        public IActionResult MessageListByIsReadFalse()
+        {
+            var values = _context.Messages.Where(x=> x.IsRead == false).ToList();   
+            return Ok(values);
 
 
+        }
     }
 }

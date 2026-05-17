@@ -1,0 +1,109 @@
+﻿@model List<ApiProjeWebUI.Dtos.NotificationDtos.ResultNotificationDto>
+
+	
+
+@{
+    string GetBg(string icon)
+    {
+        if (string.IsNullOrEmpty(icon))
+            return "bg-primary";
+
+        if (icon.Contains("check"))
+            return "bg-success";
+
+        if (icon.Contains("exclamation") || icon.Contains("warning"))
+            return "bg-warning";
+
+        if (icon.Contains("times") || icon.Contains("close"))
+            return "bg-danger";
+
+        if (icon.Contains("user"))
+            return "bg-info";
+
+        return "bg-primary";
+    }
+
+    string GetIcon(string icon)
+    {
+        return string.IsNullOrEmpty(icon) ? "fas fa-bell" : icon;
+    }
+}
+
+<li class="dropdown dropdown-list-toggle">
+    <a href="#" data-toggle="dropdown"
+       class="nav-link notification-toggle nav-link-lg">
+
+        <i data-feather="bell" class="bell"></i>
+
+        <span class="badge headerBadge1">
+            @Model.Count(x => !x.IsRead)
+        </span>
+
+    </a>
+
+    <div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
+
+        <div class="dropdown-header">
+            Bildirimler
+            <div class="float-right">
+                <a href="#">Tümünü Okundu Yap</a>
+            </div>
+        </div>
+
+        <div class="dropdown-list-content dropdown-list-icons">
+
+            @if (Model != null && Model.Any())
+            {
+                foreach (var item in Model.OrderByDescending(x => x.NotificationDate))
+                {
+                    var bg = GetBg(item.IconUrl);
+
+                    <a href="#" class="dropdown-item @(item.IsRead ? "" : "dropdown-item-unread")">
+
+                        <span class="dropdown-item-icon @bg text-white">
+                            <i class="@GetIcon(item.IconUrl)"></i>
+                        </span>
+
+                        <span class="dropdown-item-desc">
+                            @item.Description
+
+                            <span class="time">
+                                @{
+                                    var diff = DateTime.Now - item.NotificationDate;
+
+                                    if (diff.TotalMinutes < 60)
+                                    {
+                                        @($"{(int)diff.TotalMinutes} Dakika Önce")
+                                    }
+                                    else if (diff.TotalHours < 24)
+                                    {
+                                        @($"{(int)diff.TotalHours} Saat Önce")
+                                    }
+                                    else
+                                    {
+                                        @($"{(int)diff.TotalDays} Gün Önce")
+                                    }
+                                }
+                            </span>
+                        </span>
+
+                    </a>
+                }
+            }
+            else
+            {
+                <div class="dropdown-item text-center">
+                    Bildirim bulunamadı
+                </div>
+            }
+
+        </div>
+
+        <div class="dropdown-footer text-center">
+            <a href="#">Tümünü Gör <i class="fas fa-chevron-right"></i></a>
+        </div>
+
+    </div>
+</li>
+
+

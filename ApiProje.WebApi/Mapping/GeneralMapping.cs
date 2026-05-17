@@ -1,6 +1,7 @@
 ﻿using ApiProje.WebApi.DTOs.ContactDTOs;
 using ApiProje.WebApi.DTOs.FeatureDTOs;
 using ApiProje.WebApi.DTOs.MessageDTOs;
+using ApiProje.WebApi.DTOs.NotificationDTOs;
 using ApiProje.WebApi.DTOs.ProductDTOs;
 using ApiProje.WebApi.Entities;
 using AutoMapper;
@@ -25,6 +26,11 @@ namespace ApiProje.WebApi.Mapping
 
                 CreateMap<Product,CreateProductDto>().ReverseMap();
                 CreateMap<Product,ResultProductWithCategoryDto>().ForMember(x=>x.CategoryName,y=>y.MapFrom(z=>z.Category.CategoryName)).ReverseMap();
+
+            CreateMap<Notification,ResultNotificationDto>().ReverseMap();
+            CreateMap<Notification,UpdateNotificationDto>().ReverseMap();
+            CreateMap<Notification,GetNotificationByIdDto>().ReverseMap();
+            CreateMap<Notification,CreateNotificationDto>().ReverseMap();
 
         }
     }
